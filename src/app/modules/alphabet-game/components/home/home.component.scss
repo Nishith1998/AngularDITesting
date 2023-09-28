@@ -1,0 +1,64 @@
+// .grid {
+//     display: grid;
+//     width: 200px;
+// }
+// .grid-cols-4 {
+//     grid-template-columns: repeat(4, minmax(0, 1fr));
+// }
+
+// .col-span-0 {	grid-column: span 0 / span 0; }
+// .col-span-1 {	grid-column: span 1 / span 1; }
+// .col-span-2 {	grid-column: span 2 / span 2; }
+// .col-span-3 {	grid-column: span 3 / span 3; }
+
+.alphabet-container {
+    width: 30%;
+    margin: auto;
+    height: 300px;
+    border: 1px solid black;
+    overflow-y: hidden;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade {
+    animation: fadeInOut 1s ease-in-out;
+}
+
+.correct {
+    color: green;
+}
+
+@keyframes ping {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      color: red;
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the ping animation to the element with the "ping" class */
+  .wrong {
+    // width: 100px; /* Adjust the size of your element as needed */
+    // height: 100px; /* Adjust the size of your element as needed */
+    // background-color: #3498db; /* Set the background color as desired */
+    animation: ping 0.5s infinite; /* Apply the ping animation with a 1-second duration */
+  }
+
+  
+  
+  
+  

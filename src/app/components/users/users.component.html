@@ -1,0 +1,8 @@
+<button (click)="fetchNextRecords()">fetch</button>
+
+<div #divContainer style="height: 30vh; overflow-y: auto;">
+    <div *ngFor="let item of (contactList | itemsPerPage:0:currentIndex ) as data">
+        Name: {{item.contact_name}}
+    </div>
+</div>
+{{(contactList | itemsPerPage:0:currentIndex).length }} of {{contactList.length}}

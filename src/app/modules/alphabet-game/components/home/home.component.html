@@ -1,0 +1,13 @@
+<h2 style="text-align: center;" *ngIf="isGameOver">Game Over !</h2>
+<div style="display: flex; justify-content: center; gap: 46px;">
+    <!-- <div style="display: flex; justify-content: space-between;"> -->
+    <div>Level: {{difficulty.level}}</div>
+    <div>Score: {{score}}</div>
+    <!-- </div> -->
+</div>
+<div #alphaContainer class="alphabet-container">
+    <div class="element-to-animate fade {{index === (alphabetList.length - 1) ? 'correct': 'incorrect'}} {{wrongFlag && index === (alphabetList.length - 1) ? 'wrong': ''}}"
+        *ngFor="let char of alphabetList; let index = index" [ngStyle]="{'margin-left': char.margin + '%'}">
+        {{char.char}}
+    </div>
+</div>
