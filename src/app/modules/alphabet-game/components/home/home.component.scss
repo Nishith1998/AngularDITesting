@@ -14,6 +14,7 @@
 .alphabet-container {
     width: 30%;
     margin: auto;
+    // padding: 8px;
     height: 300px;
     border: 1px solid black;
     overflow-y: hidden;
@@ -31,6 +32,7 @@
 
 .fade {
     animation: fadeInOut 1s ease-in-out;
+    // padding: 0px 5px;
 }
 
 .correct {

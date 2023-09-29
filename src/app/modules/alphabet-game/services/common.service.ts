@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, interval, map, mergeMap, switchMap, tap } from 'rxjs';
 import { getRandomChar } from '../constants';
+import { generate } from 'random-words';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class CommonService {
 
   getRandomNumbers() {
     return this.intervalSubject.pipe(
-      switchMap((time) => interval(time).pipe(map(() => getRandomChar())))
+      switchMap((time) => interval(time).pipe(map(() => generate({ maxLength: 6 })/*getRandomChar()*/)))
     );
   }
   increaseDifficulty(millsTime: number) {

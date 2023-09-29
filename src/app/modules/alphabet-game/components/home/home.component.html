@@ -1,13 +1,17 @@
-<h2 style="text-align: center;" *ngIf="isGameOver">Game Over !</h2>
-<div style="display: flex; justify-content: center; gap: 46px;">
-    <!-- <div style="display: flex; justify-content: space-between;"> -->
-    <div>Level: {{difficulty.level}}</div>
-    <div>Score: {{score}}</div>
-    <!-- </div> -->
-</div>
-<div #alphaContainer class="alphabet-container">
-    <div class="element-to-animate fade {{index === (alphabetList.length - 1) ? 'correct': 'incorrect'}} {{wrongFlag && index === (alphabetList.length - 1) ? 'wrong': ''}}"
+<div style="width: 100%;">
+    <div style="text-align: center;margin-top: 2px; margin-bottom: 2px;">
+        <button *ngIf="!isGameOver" (click)="initializeGame()">start</button>
+        <button *ngIf="isGameOver" (click)="restart()">Restart</button>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 46px;">
+        <div>Level: {{difficulty.level}}</div>
+        <div>Score: {{score}}</div>
+    </div>
+    <div #alphaContainer class="alphabet-container">
+        <div class="fade {{index === (alphabetList.length - 1) ? 'correct': 'incorrect'}} {{wrongFlag && index === (alphabetList.length - 1) ? 'wrong': ''}}"
         *ngFor="let char of alphabetList; let index = index" [ngStyle]="{'margin-left': char.margin + '%'}">
         {{char.char}}
     </div>
+    </div>
+    <h2 style="text-align: center;" *ngIf="isGameOver">Game Over !</h2>
 </div>
